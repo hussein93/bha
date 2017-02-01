@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" ng-click="vm.navCollapsed = !vm.navCollapsed" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="home">Volunteer Interpreter Project</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-response-collapse" uib-collapse="vm.navCollapsed">
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-show="vm.user.isSignedIn() && vm.user.isAdmin()"><a ui-sref="volunteerSearch">Volunteers</a></li>
+        <li ng-show="vm.user.isSignedIn()"><a ui-sref="assignments">Assignments</a></li>
+        <li ng-show="vm.user.isAdmin()"><a ui-sref="addAssignment">Add Assignment</a></li>
+        <li ng-show="vm.user.isAdmin()"><a ui-sref="volunteerApplication">Register Volunteer</a></li>
+        <li ng-show="!vm.user.isSignedIn()"><a ui-sref="login">Login</a></li>
+        <li ng-show="vm.user.isSignedIn()"><a href="#" ng-click="vm.user.logout()">Logout</a></li>
+        <li ng-show="!vm.user.isSignedIn()"><a ui-sref="volunteerApplication">Apply</a></li>
+        <li ng-show="vm.user.isSignedIn()"><a href="#" ng-click="vm.user.viewProfile()">Profile</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

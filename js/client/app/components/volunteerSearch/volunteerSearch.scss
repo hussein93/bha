@@ -1,0 +1,98 @@
+.sortorder {
+  cursor: pointer;
+  &:after {
+    content: '\25b2';
+  }
+  &.isReverseOrder:after {
+    content: '\25bc';
+  }
+}
+
+.volunteer-search {
+  margin: 10px 0 30px;
+  
+  label {
+    font-weight: normal;
+  }
+
+  .volunteers-table {
+
+    .notify-column {
+      text-align: center;
+      width: 10%;
+    }
+
+    .first-name-column, .last-name-column, .languages-column, .hours-column {
+      width: 22%;
+    }
+  }
+
+  .input-label {
+    margin-right: .5em;
+  }
+
+  .language-filters {
+    width: 400px;
+  }
+
+  .language-select-group {
+    display: inline-block;
+    margin-right: .5em;
+  }
+
+  .inline-checkbox {
+    display: inline-block;
+  }
+
+  .language-select {
+    display: inline-block;
+  }
+
+  .form-group {
+    margin-right: 1em;
+  }
+
+  .search-filters {
+    margin-bottom: 1em;
+  }
+
+  .clickable {
+    cursor: pointer;
+  }
+
+  // notifications modal
+  .modal-title {
+    text-align: center;
+  }
+
+  .notifications-body {
+    margin-top: 1em;
+    margin-bottom: 2em;
+
+    h4 {
+      text-align: center;
+    }
+  }
+
+  .notifications-table {
+    border-radius: 1em;
+
+    th {
+      text-align: center;
+      background-color: #f4f4f4;
+    }
+
+    td {
+      background-color: #fafafa;
+      text-align: center;
+
+      a {
+        cursor: pointer;
+      }
+    }
+
+    td.x {
+      text-align: center;
+    }
+  }
+}

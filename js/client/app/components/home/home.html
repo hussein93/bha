@@ -1,0 +1,47 @@
+<main class="home">
+<div class="container">
+  <div class="jumbotron">
+    <h2>Home</h2>
+    <h4>Welcome to the Volunteer Interpreter Online Portal!</h4>
+    <h5 ng-show="vm.userService.getLevel() === 0">Your application is currently pending approval.</h5>
+    <div class="container">
+      <div class="row">
+        <a ui-sref="volunteerSearch" ng-show="vm.userService.isAdmin()">Search for volunteers</a>
+      </div>
+      <div class="row">
+        <a ui-sref="assignments" ng-show="vm.userService.getLevel() != 0">Search for assignments</a>
+      </div>
+      <div class="row">
+        <a ui-sref="addAssignment" ng-show="vm.userService.isAdmin()">Add a new assignment</a>
+      </div>
+      <div class="row">
+        <a ui-sref="volunteerApplication" ng-show="vm.userService.isAdmin()">Register a new volunteer</a>
+      </div>
+      <div class="row">
+        <a href="#" ng-click="vm.userService.viewProfile()">View your profile</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="referralContainer">
+    <form class="form-inline" name="referral">
+      <label for="friendEmail">Know a friend willing to help out?</label>
+      <br>
+      <input type="email" id="friendEmail"
+             placeholder="Email" class="form-control"
+             ng-model="friendEmail"
+      >
+      <button ng-click="vm.sendReferral()" class="btn btn-default" id="sendReferral">
+        Send Referral
+      </button>
+    </form>
+  </div>
+
+
+  <div class="assignmentsContainer">
+    <h2>Upcoming Assignments</h2>
+    <assignment-list assignments="vm.assignments"></assignment-list>
+  </div>
+</div>
+</main>

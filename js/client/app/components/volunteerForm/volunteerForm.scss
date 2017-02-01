@@ -1,0 +1,28 @@
+.volunteer-form {
+  max-width: 750px;
+  margin-top: 30px;
+
+  .header {
+    text-align: center;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input, select {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-radius: 4px !important;
+  }
+
+  .sub {
+    margin-top: 4px;
+    text-align: right;
+  }
+
+  select {
+    padding-left: 5px;
+    padding-right: 0px;
+  }
+}

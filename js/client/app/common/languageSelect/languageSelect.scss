@@ -1,0 +1,15 @@
+.language-select-group {
+  width: 100%;
+}
+.language-select {
+  width: 100%;
+  .ui-select-toggle {
+    margin: 0;
+  }
+}
+
+.language-select.error {
+  input, span.ui-select-toggle {
+    background-color: #fee;
+  }
+}

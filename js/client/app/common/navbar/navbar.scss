@@ -1,0 +1,10 @@
+@import '../common';
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0 !important;
+}
+
+li:hover {
+   color: $darkBgColor;
+}

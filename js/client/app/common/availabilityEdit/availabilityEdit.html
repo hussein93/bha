@@ -1,0 +1,52 @@
+<div class="availability-edit">
+  <table class="table table-bordered tab">
+    <thead>
+      <tr>
+        <th>Day of Week</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+      </tr>
+    </thead>
+    <tr ng-repeat="availability in vm.availability">
+      <td class="col-sm-4">
+        <ui-select ng-model="availability.day" ng-class="{invalid: !availability.isValid}" class="availability-select">
+          <ui-select-match>
+            {{$select.selected.name}}
+          </ui-select-match>
+          <ui-select-choices repeat="dayObj.key as dayObj in vm.selectOptions.days | filter:{name: $select.search}">
+            {{dayObj.name}}
+          </ui-select-choices>
+        </ui-select>
+      </td>
+      <td class="col-sm-4">
+        <ui-select ng-model="availability.start_time" ng-class="{invalid: !availability.isValid}" class="availability-select">
+          <ui-select-match>
+            {{$select.selected}}
+          </ui-select-match>
+          <ui-select-choices repeat="timeObj in vm.selectOptions.availabilityTimes">
+            {{timeObj}}
+          </ui-select-choices>
+        </ui-select>
+      </td>
+      <td>
+        <ui-select ng-model="availability.end_time" ng-class="{invalid: !availability.isValid}" class="availability-select">
+          <ui-select-match>
+            {{$select.selected}}
+          </ui-select-match>
+          <ui-select-choices repeat="timeObj in vm.selectOptions.availabilityTimes">
+            {{timeObj}}
+          </ui-select-choices>
+        </ui-select>
+      </td>
+    </tr>
+  </table>
+  <div class="list-buttons">
+    Add/Remove Availability
+    <button type="button" ng-show="vm.availability.length > 1" ng-click="vm.removeLastAvailability()" class="btn btn-primary" aria-label="Remove last availability">
+      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+    </button>
+    <button type="button" ng-click="vm.addNewAvailability()" class="btn btn-primary" aria-label="Add availability">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
